@@ -8,22 +8,23 @@
 <ion-content padding>
   <form id="form" (ngSubmit)="onSubmit()" [formGroup]="form">
     <ion-item id="randomTimer-input6">
-      <ion-label stacked></ion-label>
-      <ion-input type="number" placeholder="Minimum" formControlName="min"></ion-input>
+      <ion-label floating>Minimum</ion-label>
+      <ion-input type="number" formControlName="min"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label stacked></ion-label>
-      <ion-input type="number" placeholder="Maximum" formControlName="max"></ion-input>
+      <ion-label floating>Maximum</ion-label>
+      <ion-input type="number" formControlName="max"></ion-input>
+    </ion-item>
+    <ion-label color="danger" *ngIf="numbersInvalid()"> Maximum cannot be shorter than Minimum </ion-label>
+    <ion-item>
+      <ion-label floating>Timer text</ion-label>
+      <ion-input type="text" formControlName="text"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label stacked></ion-label>
-      <ion-input type="text" placeholder="Timer text" formControlName="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label>
+      <ion-label floating>
         Unit
       </ion-label>
-      <ion-select name="unit" formControlName="unit">
+      <ion-select name="unit" formControlName="unit" required>
         <ion-option value="seconds">
           Seconds
         </ion-option>
@@ -32,7 +33,7 @@
         </ion-option>
       </ion-select>
     </ion-item>
-    <button ion-button color="primary" block [disabled]="!form.valid">
+    <button ion-button color="primary" block [disabled]="!form.valid || numbersInvalid()">
       Start Timer
     </button>
     <button ion-button color="light" type="button" block (click)="form.reset()">

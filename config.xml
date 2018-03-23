@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="com.alexkibler.randomtimer" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>random-timer</name>
+    <name>Random Timer</name>
     <description>It's like a timer, but less reliable.</description>
     <author email="alex@alexkibler.com" href="http://alexkibler.com/">Alex  Kibler</author>
     <content src="index.html" />

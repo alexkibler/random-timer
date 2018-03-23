@@ -48,7 +48,8 @@ export class HomePage {
       this.localNotifications.schedule({
         id: 1,
         text: text ? text : 'Time\'s up! (Alarm was set for ' + timeout / +UnitToMs[unit] + ' ' + unit + ')' ,
-        title: 'Random Timer'
+        title: 'Random Timer',
+        smallIcon: 'file://assets/icon/icon.png'
       });
       this.submitted = false;
       this.backgroundMode.disable();
@@ -61,7 +62,11 @@ export class HomePage {
     toast.present();
   }
 
-
+  public numbersInvalid() {
+    let min = this.form.controls['min'].value;
+    let max = this.form.controls['max'].value;
+    return max && min && (max < min);
+  }
 
   private randomIntFromInterval(min,max) {
       return Math.floor(Math.random()*(max-min+1)+min);

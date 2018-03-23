@@ -50,7 +50,6 @@
   "description": "It's like a timer, but less reliable",
   "cordova": {
     "plugins": {
-      "ionic-plugin-keyboard": {},
       "cordova-plugin-whitelist": {},
       "cordova-plugin-console": {},
       "cordova-plugin-statusbar": {},
