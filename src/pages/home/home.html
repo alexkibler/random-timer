@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Random Timer
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <form id="form" (ngSubmit)="onSubmit()" [formGroup]="form">
+    <ion-item id="randomTimer-input6">
+      <ion-label stacked></ion-label>
+      <ion-input type="number" placeholder="Minimum" formControlName="min"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked></ion-label>
+      <ion-input type="number" placeholder="Maximum" formControlName="max"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked></ion-label>
+      <ion-input type="text" placeholder="Timer text" formControlName="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        Unit
+      </ion-label>
+      <ion-select name="unit" formControlName="unit">
+        <ion-option value="seconds">
+          Seconds
+        </ion-option>
+        <ion-option value="minutes">
+          Minutes
+        </ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-button color="primary" block [disabled]="!form.valid">
+      Start Timer
+    </button>
+    <button ion-button color="light" type="button" block (click)="form.reset()">
+      Reset
+    </button>
+  </form>
+</ion-content>
